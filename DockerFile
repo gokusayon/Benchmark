@@ -1,0 +1,7 @@
+FROM maven
+RUN mkdir -p /var/log/benchmark
+COPY . /usr/src/benchmark
+WORKDIR /usr/src/benchmark
+RUN mvn compile
+RUN ls -l
+RUN runBenchmark.sh/.bat
